@@ -1,0 +1,44 @@
+{
+    "name": "fitnesshouse/fh-request-server",
+    "version": "1.0.0",
+    "description": "Fitness House Request Server Api through the message broker",
+    "license": "MIT",
+    "homepage": "https://github.com/fhcs/fh-request-server",
+    "authors": [
+        {
+            "name": "Mikhaylov.V",
+            "email": "mihailov.v@fhclub.ru"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "6.*",
+        "vladmeh/rabbitmq-client": "1.*",
+        "vladmeh/xml-utils": "1.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "mockery/mockery": "1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fh\\RequestServer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fh\\RequestServer\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fh\\RequestServer\\RequestServerServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}
