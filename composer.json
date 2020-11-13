@@ -12,6 +12,7 @@
     ],
     "require": {
         "php": "^7.2",
+        "ext-simplexml": "*",
         "illuminate/support": "6.*",
         "vladmeh/rabbitmq-client": "1.*",
         "vladmeh/xml-utils": "1.*"

@@ -10,16 +10,22 @@ class MessageRequest
 {
     use Macroable;
 
+    /**
+     * @var string
+     */
     private $type;
 
+    /**
+     * @var array|mixed
+     */
     private $parameters;
 
     /**
      * MessageRequest constructor.
-     * @param $type
-     * @param $parameters
+     * @param string $type
+     * @param array $parameters
      */
-    public function __construct($type, $parameters = [])
+    public function __construct(string $type, array $parameters = [])
     {
         $this->type = $type;
         $this->parameters = $parameters;
@@ -27,20 +33,20 @@ class MessageRequest
 
 
     /**
-     * @param $type
+     * @param string $type
      * @param array $parameters
      * @return MessageRequest
      */
-    public static function make($type, $parameters = []): self
+    public static function make(string $type, array $parameters = []): self
     {
         return new self($type, $parameters);
     }
 
     /**
-     * @param false $valAtAttr
+     * @param bool $valAtAttr
      * @return string
      */
-    public function toXml($valAtAttr = false): string
+    public function toXml(bool $valAtAttr = false): string
     {
         return $valAtAttr ? $this->xmlAttribute() : $this->xml();
     }
