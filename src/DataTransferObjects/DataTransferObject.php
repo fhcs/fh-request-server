@@ -6,7 +6,7 @@ namespace Fh\RequestServer\DataTransferObjects;
 
 use Illuminate\Contracts\Support\Arrayable;
 
-abstract class DataTransferObject implements Arrayable, DataTransfer
+abstract class DataTransferObject implements Arrayable
 {
     /**
      * DataTransferObject constructor.

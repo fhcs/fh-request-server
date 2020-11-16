@@ -1,6 +1,6 @@
 <?php
 
-namespace Fh\RequestServer\Request;
+namespace Fh\RequestServer\RequestManager;
 
 use Illuminate\Support\Traits\Macroable;
 use SimpleXMLElement;

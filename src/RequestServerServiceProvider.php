@@ -9,8 +9,8 @@ class RequestServerServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/config.php',
-            'package'
+            __DIR__ . '/../config/config.php',
+            'request-server'
         );
     }
 
@@ -18,8 +18,8 @@ class RequestServerServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('request-server.php'),
-            ], 'package-config');
+                __DIR__ . '/../config/config.php' => $this->app->configPath('request-server.php'),
+            ], 'request-server');
         }
     }
 }
