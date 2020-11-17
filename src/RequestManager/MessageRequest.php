@@ -18,28 +18,28 @@ class MessageRequest
     /**
      * @var array|mixed
      */
-    private $parameters;
+    private $attributes;
 
     /**
      * MessageRequest constructor.
      * @param string $type
-     * @param array $parameters
+     * @param array $attributes
      */
-    public function __construct(string $type, array $parameters = [])
+    public function __construct(string $type, array $attributes = [])
     {
         $this->type = $type;
-        $this->parameters = $parameters;
+        $this->attributes = $attributes;
     }
 
 
     /**
      * @param string $type
-     * @param array $parameters
+     * @param array $attributes
      * @return MessageRequest
      */
-    public static function make(string $type, array $parameters = []): self
+    public static function make(string $type, array $attributes = []): self
     {
-        return new self($type, $parameters);
+        return new self($type, $attributes);
     }
 
     /**
@@ -59,8 +59,8 @@ class MessageRequest
         $message = new SimpleXMLElement('<REQUEST/>');
         $message->addAttribute('type', $this->type);
 
-        if (!empty($this->parameters)) {
-            Xml::arrayToXmlAttribute($this->parameters, $message, true);
+        if (!empty($this->attributes)) {
+            Xml::arrayToXmlAttribute($this->attributes, $message, true);
         }
 
         return $message->asXML();

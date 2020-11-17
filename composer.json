@@ -1,6 +1,6 @@
 {
     "name": "fitnesshouse/fh-request-server",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "Fitness House Request Server Api through the message broker",
     "license": "MIT",
     "homepage": "https://github.com/fhcs/fh-request-server",
