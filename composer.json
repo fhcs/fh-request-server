@@ -1,6 +1,6 @@
 {
     "name": "fitnesshouse/fh-request-server",
-    "version": "1.1.1",
+    "version": "2.0.0",
     "description": "Fitness House Request Server Api through the message broker",
     "license": "MIT",
     "homepage": "https://github.com/fhcs/fh-request-server",
@@ -11,14 +11,14 @@
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^7.3|^8.0",
         "ext-simplexml": "*",
-        "illuminate/support": "6.*",
-        "vladmeh/rabbitmq-client": "^1.2",
-        "vladmeh/xml-utils": "^1.2"
+        "illuminate/support": "7.*",
+        "vladmeh/rabbitmq-client": "^2.0",
+        "vladmeh/xml-utils": "^2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.0",
+        "phpunit/phpunit": "^8.5|^9.3",
         "mockery/mockery": "1.*"
     },
     "autoload": {
