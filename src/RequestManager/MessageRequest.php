@@ -56,7 +56,7 @@ class MessageRequest
      */
     public function xmlAttribute(): string
     {
-        $message = new SimpleXMLElement('<REQUEST/>');
+        $message = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><REQUEST/>');
         $message->addAttribute('type', $this->type);
 
         if (!empty($this->attributes)) {
@@ -71,7 +71,7 @@ class MessageRequest
      */
     public function xml(): string
     {
-        $message = new SimpleXMLElement('<REQUEST/>');
+        $message = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><REQUEST/>');
         $message->addAttribute('type', $this->type);
 
         if (!empty($this->attributes)) {
