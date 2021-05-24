@@ -1,6 +1,6 @@
 {
     "name": "fitnesshouse/fh-request-server",
-    "version": "2.0.1",
+    "version": "2.1.0",
     "description": "Fitness House Request Server Api through the message broker",
     "license": "MIT",
     "homepage": "https://github.com/fhcs/fh-request-server",
@@ -12,6 +12,7 @@
     ],
     "require": {
         "php": "^7.3|^8.0",
+        "ext-json": "*",
         "ext-simplexml": "*",
         "vladmeh/rabbitmq-client": "^2.0",
         "vladmeh/xml-utils": "^2.0"
