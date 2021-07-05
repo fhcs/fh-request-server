@@ -25,7 +25,7 @@ abstract class RequestFactory implements RequestHandler
     /**
      * @var array
      */
-    protected $responseData;
+    protected $responseData = [];
 
     /**
      * RequestFactory constructor.
