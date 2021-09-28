@@ -40,7 +40,7 @@ abstract class DataTransferObject implements Arrayable
     {
         $data = [];
 
-        $class = new \ReflectionClass(static::class);
+        $class = new \ReflectionObject($this);
         $properties = $class->getProperties(\ReflectionProperty::IS_PUBLIC);
 
         foreach ($properties as $property) {
