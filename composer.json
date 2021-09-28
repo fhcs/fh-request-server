@@ -1,6 +1,5 @@
 {
     "name": "fitnesshouse/fh-request-server",
-    "version": "1.1.1",
     "description": "Fitness House Request Server Api through the message broker",
     "license": "MIT",
     "homepage": "https://github.com/fhcs/fh-request-server",
@@ -36,10 +35,14 @@
             "providers": [
                 "Fh\\RequestServer\\RequestServerServiceProvider"
             ]
+        },
+        "branch-alias": {
+            "dev-master": "1.x-dev"
         }
     },
     "config": {
         "sort-packages": true
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
