@@ -21,20 +21,24 @@ abstract class DataTransferCollection extends DataTransferObject implements \Cou
 
     /**
      * DataTransferCollection constructor.
-     * @param array $parameters
+     * @param array|null $parameters
      */
-    public function __construct(array $parameters = [])
+    public function __construct(?array $parameters = [])
     {
         parent::__construct([]);
         $this->collectData($parameters);
     }
 
     /**
-     * @param $resource
+     * @param mixed $resource
      * @return Collection
      */
-    protected function collectData($resource)
+    protected function collectData($resource): Collection
     {
+        if (is_null($resource)) {
+            $resource = new Collection();
+        }
+
         if (is_array($resource)) {
             $resource = new Collection($resource);
         }
@@ -51,7 +55,7 @@ abstract class DataTransferCollection extends DataTransferObject implements \Cou
     /**
      * @return string|null
      */
-    protected function collects()
+    protected function collects(): ?string
     {
         if ($this->collects) {
             return $this->collects;
@@ -70,13 +74,13 @@ abstract class DataTransferCollection extends DataTransferObject implements \Cou
         return $this->collection->getIterator();
     }
 
-    public function count()
+    public function count(): int
     {
         return $this->collection->count();
     }
 
     public function toArray(): array
     {
-        return $this->collection->map->toArray()->all();
+        return $this->collection->toArray();
     }
 }

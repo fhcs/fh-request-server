@@ -10,9 +10,9 @@ abstract class DataTransferObject implements Arrayable
 {
     /**
      * DataTransferObject constructor.
-     * @param array $parameters
+     * @param array|null $parameters
      */
-    public function __construct(array $parameters = [])
+    public function __construct(?array $parameters = [])
     {
         if (!empty($parameters)) {
             $parameters = method_exists($this, 'mapData') ? $this->mapData($parameters) : $parameters;
@@ -25,10 +25,10 @@ abstract class DataTransferObject implements Arrayable
     }
 
     /**
-     * @param array $data
+     * @param mixed $data
      * @return static
      */
-    public static function make(array $data): self
+    public static function make($data): self
     {
         return new static($data);
     }
