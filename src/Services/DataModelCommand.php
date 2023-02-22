@@ -11,13 +11,13 @@ abstract class DataModelCommand implements Executable
     /**
      * @var DataTransferObject
      */
-    protected $dataTransferObject;
+    protected DataTransferObject $dataTransferObject;
 
 
     /**
      * @var string
      */
-    protected $modelClass;
+    protected string $modelClass;
 
     /**
      * DataModelCommand constructor.

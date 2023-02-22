@@ -10,22 +10,22 @@ abstract class AbstractRequestHandler implements RequestHandler
     /**
      * @var string
      */
-    protected $typeRequest = '';
+    protected string $typeRequest = '';
 
     /**
      * @var string
      */
-    protected $response;
+    protected string $response;
 
     /**
      * @var array
      */
-    protected $requestData = [];
+    protected array $requestData = [];
 
     /**
      * @var array
      */
-    protected $responseData = [];
+    protected array $responseData = [];
 
     /**
      * RequestFactory constructor.

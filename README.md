@@ -5,8 +5,8 @@
 Web Request Server Api для взаимодействия с внутренним RS через брокер сообщений
 
 ## Features
-* php v7.3
-* [Laravel v7.*](https://laravel.com/docs/7.x)
+* php v7.4
+* [Laravel v8.*](https://laravel.com/docs/8.x)
 * [vladmeh/rabbitmq-client v2.*](https://github.com/vladmeh/rabbitmq-client)
 * [vladmeh/xml-utils v2.*](https://github.com/vladmeh/xml-utils)
 
@@ -14,22 +14,22 @@ Web Request Server Api для взаимодействия с внутренни
 
 ### Version Compatibility
 
-Laravel  | Request Server | min PHP
-:---------|:---------------|:----------
-6.x      | 1.x            | 7.2
-7.x      | 2.x            | 7.3
-8.x      | --             | --
+| Laravel | Request Server | min PHP |
+|:--------|:---------------|:--------|
+| 6.x     | 1.x            | 7.2     |
+| 7.x     | 2.x            | 7.3     |
+| 8.x     | 3.x            | 7.4     |
 
 ## Installation
 
 ### Composer
 
-add the following to your require part within the composer.json:
+add the following to your requirement part within the composer.json:
 
 ```json
 {
     "require": {
-        "fitnesshouse/fh-request-server": "^2.0"
+        "fitnesshouse/fh-request-server": "^3.0"
     },
     "repositories": [
         {

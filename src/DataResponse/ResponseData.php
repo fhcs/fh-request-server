@@ -12,7 +12,7 @@ class ResponseData extends DataTransferObject implements Responsable
     /**
      * @var int
      */
-    public $status = 200;
+    public int $status = 200;
 
     /**
      * @var mixed

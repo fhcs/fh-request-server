@@ -11,7 +11,7 @@ class RpcService
     /**
      * @var RpcClient
      */
-    private $rpcClient;
+    private RpcClient $rpcClient;
 
     /**
      * Example constructor.

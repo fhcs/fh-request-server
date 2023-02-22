@@ -13,7 +13,7 @@ class MessageRequest
     /**
      * @var string
      */
-    private $type;
+    private string $type;
 
     /**
      * @var array|mixed

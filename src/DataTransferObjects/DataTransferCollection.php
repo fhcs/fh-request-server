@@ -12,12 +12,12 @@ abstract class DataTransferCollection extends DataTransferObject implements \Cou
     /**
      * @var string
      */
-    public $collects;
+    public string $collects;
 
     /**
      * @var Collection
      */
-    public $collection;
+    public Collection $collection;
 
     /**
      * DataTransferCollection constructor.

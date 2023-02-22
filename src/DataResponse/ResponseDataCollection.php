@@ -14,7 +14,10 @@ class ResponseDataCollection extends DataTransferObject implements Responsable
      */
     public $collection;
 
-    public $status = 200;
+    /**
+     * @var int
+     */
+    public int $status = 200;
 
     /**
      * @inheritDoc
