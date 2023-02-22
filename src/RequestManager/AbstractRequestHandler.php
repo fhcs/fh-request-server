@@ -87,7 +87,8 @@ abstract class AbstractRequestHandler implements RequestHandler
         $message = sprintf("Request rabbit type: %s\nRequest: %s\nResponse: %s\n",
             $this->typeRequest,
             json_encode($this->requestData, JSON_UNESCAPED_UNICODE),
-            json_encode($this->responseData, JSON_UNESCAPED_UNICODE));
+            mb_substr(json_encode($this->responseData, JSON_UNESCAPED_UNICODE), 0, 500).'...'
+        );
         Log::channel('rabbit')->info($message);
     }
 
