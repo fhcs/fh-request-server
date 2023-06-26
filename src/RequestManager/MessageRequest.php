@@ -21,6 +21,11 @@ class MessageRequest
     private $attributes;
 
     /**
+     * @var string
+     */
+    private $multipleNodeName = 'item';
+
+    /**
      * MessageRequest constructor.
      * @param string $type
      * @param array $attributes
@@ -44,10 +49,12 @@ class MessageRequest
 
     /**
      * @param bool $valAtAttr
+     * @param string $multipleNodeName
      * @return string
      */
-    public function toXml(bool $valAtAttr = false): string
+    public function toXml(bool $valAtAttr = false, string $multipleNodeName = 'item'): string
     {
+        $this->setMultipleNodeName($multipleNodeName);
         return $valAtAttr ? $this->xmlAttribute() : $this->xml();
     }
 
@@ -60,7 +67,7 @@ class MessageRequest
         $message->addAttribute('type', $this->type);
 
         if (!empty($this->attributes)) {
-            Xml::arrayToXmlAttribute($this->attributes, $message, true);
+            Xml::arrayToXmlAttribute($this->attributes, $message, true, $this->multipleNodeName);
         }
 
         return $message->asXML();
@@ -75,9 +82,17 @@ class MessageRequest
         $message->addAttribute('type', $this->type);
 
         if (!empty($this->attributes)) {
-            Xml::arrayToXml($this->attributes, $message, true);
+            Xml::arrayToXml($this->attributes, $message, true, $this->multipleNodeName);
         }
 
         return $message->asXML();
+    }
+
+    /**
+     * @param string $multipleNodeName
+     */
+    public function setMultipleNodeName(string $multipleNodeName): void
+    {
+        $this->multipleNodeName = $multipleNodeName;
     }
 }
