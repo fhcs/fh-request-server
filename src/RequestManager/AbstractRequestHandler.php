@@ -28,6 +28,11 @@ abstract class AbstractRequestHandler implements RequestHandler
     protected $responseData = [];
 
     /**
+     * @var string
+     */
+    protected $multipleNodeName = 'item';
+
+    /**
      * RequestFactory constructor.
      */
     public function __construct()
@@ -67,13 +72,12 @@ abstract class AbstractRequestHandler implements RequestHandler
     }
 
     /**
-     * @param string $multipleNodeName
      * @return string
      */
-    public function makeMessage(string $multipleNodeName = 'item'): string
+    public function makeMessage(): string
     {
         return MessageRequest::make($this->typeRequest, $this->requestData)
-            ->toXml(true, $multipleNodeName);
+            ->toXml(true, $this->multipleNodeName);
     }
 
     protected function setResponseData(): void
