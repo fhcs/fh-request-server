@@ -20,11 +20,6 @@ abstract class AbstractRequestHandler implements RequestHandler
     /**
      * @var array
      */
-    protected $requestData = [];
-
-    /**
-     * @var array
-     */
     protected $responseData = [];
 
     /**
@@ -33,14 +28,9 @@ abstract class AbstractRequestHandler implements RequestHandler
     protected $multipleNodeName = 'item';
 
     /**
-     * RequestFactory constructor.
+     * @return array
      */
-    public function __construct()
-    {
-        $this->setRequestData();
-    }
-
-    abstract protected function setRequestData(): void;
+    abstract protected function requestData(): array;
 
     /**
      * @return array
@@ -76,7 +66,7 @@ abstract class AbstractRequestHandler implements RequestHandler
      */
     public function makeMessage(): string
     {
-        return MessageRequest::make($this->typeRequest, $this->requestData)
+        return MessageRequest::make($this->typeRequest, $this->requestData())
             ->toXml(true, $this->multipleNodeName);
     }
 
@@ -99,7 +89,7 @@ abstract class AbstractRequestHandler implements RequestHandler
     {
         $message = sprintf("Request rabbit type: %s\nRequest: %s\nResponse: %s\n",
             $this->typeRequest,
-            json_encode($this->requestData, JSON_UNESCAPED_UNICODE),
+            json_encode($this->requestData(), JSON_UNESCAPED_UNICODE),
             mb_substr(json_encode($this->responseData, JSON_UNESCAPED_UNICODE), 0, 500) . '...'
         );
         Log::channel('rabbit')->info($message);
